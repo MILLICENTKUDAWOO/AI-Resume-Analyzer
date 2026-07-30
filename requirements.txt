@@ -1,0 +1,7 @@
+Flask
+
+pypdf
+
+spacy
+
+reportlab

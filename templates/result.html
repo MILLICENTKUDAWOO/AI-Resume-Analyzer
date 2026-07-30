@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+AI Career Report
+</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+
+<h1>
+🚀 AI Career Coach Pro
+</h1>
+
+
+<p>
+AI Powered Resume Intelligence Platform
+</p>
+
+
+
+<a href="/">
+Analyze Another Resume
+</a>
+
+
+</nav>
+
+
+
+
+
+<section class="dashboard">
+
+
+
+<div class="top-cards">
+
+
+
+<div class="stat-card">
+
+<h3>
+Resume Health
+</h3>
+
+<strong>
+{{ analysis.score }}%
+</strong>
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+<h3>
+ATS Score
+</h3>
+
+<strong>
+{{ analysis.ats_score }}%
+</strong>
+
+</div>
+
+
+
+
+
+{% if job_result %}
+
+<div class="stat-card">
+
+<h3>
+Job Match
+</h3>
+
+<strong>
+{{ job_result.score }}%
+</strong>
+
+</div>
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🧠 AI Resume Summary
+</h2>
+
+
+<p>
+{{ analysis.summary }}
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="result-grid">
+
+
+<div class="result-card">
+
+
+<h2>
+🧠 Skills Detected
+</h2>
+
+
+
+{% for skill in analysis.skills %}
+
+<span class="skill success">
+✅ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🧩 Skills To Improve
+</h2>
+
+
+
+{% for skill in analysis.missing_skills %}
+
+<span class="skill danger">
+❌ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+💪 Resume Strength Analysis
+</h2>
+
+
+
+<h3>
+Strong Areas
+</h3>
+
+
+
+{% for item in strength.strengths %}
+
+<p>
+✅ {{ item }}
+</p>
+
+{% endfor %}
+
+
+
+
+
+<h3>
+Areas To Improve
+</h3>
+
+
+
+{% for item in strength.weaknesses %}
+
+<p>
+⚠ {{ item }}
+</p>
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🎯 Recommended Career Paths
+</h2>
+
+
+
+{% for career in career_recommendations %}
+
+
+
+<div class="career-card">
+
+
+<h3>
+{{ career.title }}
+</h3>
+
+
+<div class="match">
+{{ career.score }}% Match
+</div>
+
+
+
+<h4>
+Matched Skills
+</h4>
+
+
+
+{% for skill in career.matched %}
+
+<span class="skill success">
+✅ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+
+
+<h4>
+Skills To Develop
+</h4>
+
+
+
+{% for skill in career.missing %}
+
+<span class="skill danger">
+❌ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{% if job_result %}
+
+
+<div class="result-card">
+
+
+<h2>
+🎯 Job Compatibility
+</h2>
+
+
+
+<h3>
+{{ job_result.score }}% Match
+</h3>
+
+
+
+<h4>
+Matched Skills
+</h4>
+
+
+{% for skill in job_result.matched %}
+
+<span class="skill success">
+✅ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+
+
+
+<h4>
+Missing Skills
+</h4>
+
+
+
+{% for skill in job_result.missing %}
+
+<span class="skill danger">
+❌ {{ skill }}
+</span>
+
+{% endfor %}
+
+
+
+</div>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🎤 AI Interview Preparation
+</h2>
+
+
+
+{% for question in interview_questions %}
+
+<div class="question">
+
+{{ loop.index }}. {{ question }}
+
+</div>
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+💡 AI Recommendations
+</h2>
+
+
+<ul>
+
+
+{% for item in analysis.recommendations %}
+
+<li>
+{{ item }}
+</li>
+
+{% endfor %}
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+📈 Career Roadmap
+</h2>
+
+
+<ul>
+
+
+{% for step in analysis.roadmap %}
+
+<li>
+{{ step }}
+</li>
+
+{% endfor %}
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+<a class="download-btn" href="/download/{{ report_file }}">
+
+📄 Download AI Report PDF
+
+</a>
+
+
+
+
+
+
+<footer>
+
+
+<h3>
+🚀 AI Career Coach Pro
+</h3>
+
+
+<p>
+Transforming Resumes Into Career Opportunities
+</p>
+
+
+<p>
+Built by Millicent Kudawoo
+</p>
+
+
+</footer>
+
+
+
+
+</section>
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+
+
+</html>

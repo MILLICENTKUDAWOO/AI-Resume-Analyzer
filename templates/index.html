@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Career Coach</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+
+<body>
+
+
+<section class="hero-section">
+
+
+    <div class="hero-text">
+
+
+        <div class="brand-icon">
+
+            ✦
+
+        </div>
+
+
+
+        <h1>
+            AI Career Coach
+        </h1>
+
+
+
+        <h2>
+            Transform Your Resume Into Career Opportunities
+        </h2>
+
+
+
+        <p>
+            Analyze your skills, discover career gaps,
+            match with opportunities, and build a stronger
+            professional profile using intelligent resume analysis.
+        </p>
+
+
+
+
+        <div class="hero-buttons">
+
+
+            <a href="#upload">
+
+                <button>
+                    Upload Resume
+                </button>
+
+            </a>
+
+
+
+            <a href="#features">
+
+                <button class="secondary-btn">
+                    Explore Career Path
+                </button>
+
+            </a>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="career-visual">
+
+
+
+        <div class="ai-core">
+
+
+            <div class="core-text">
+
+                AI
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="career-card card-one">
+
+            📄 Resume Intelligence
+
+        </div>
+
+
+
+
+        <div class="career-card card-two">
+
+            🧠 Skill Discovery
+
+        </div>
+
+
+
+
+        <div class="career-card card-three">
+
+            🎯 Career Match
+
+        </div>
+
+
+
+
+        <div class="career-card card-four">
+
+            📈 Growth Roadmap
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<div class="marquee-box">
+
+
+    <div class="marquee-text">
+
+        AI Resume Analysis • Career Growth • Job Matching • Skill Development • Future Ready Professionals
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<section id="features" class="features">
+
+
+
+<div class="feature-card">
+
+
+<h3>
+📄 Smart Resume Analysis
+</h3>
+
+
+<p>
+Understand your strengths and improve your professional profile.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-card">
+
+
+<h3>
+🎯 Intelligent Job Matching
+</h3>
+
+
+<p>
+Compare your skills with real job requirements.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="feature-card">
+
+
+<h3>
+📈 Career Growth Roadmap
+</h3>
+
+
+<p>
+Discover the skills needed for your next opportunity.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section id="upload" class="upload-card">
+
+
+<h2>
+Upload Your Resume
+</h2>
+
+
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+
+
+<input 
+type="file"
+name="resume"
+accept=".pdf"
+required>
+
+
+
+<br><br>
+
+
+
+<textarea
+
+name="job_description"
+
+rows="10"
+
+placeholder="Paste the job description here..."
+
+required>
+
+</textarea>
+
+
+
+<br><br>
+
+
+
+<button type="submit">
+
+Analyze Resume
+
+</button>
+
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 Millicent Kudawoo. All Rights Reserved.
+</p>
+
+
+<p>
+AI Career Coach | Transforming resumes into career opportunities
+</p>
+
+
+</footer>
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,7 @@
+.venv/
+.venv - Copy/
+__pycache__/
+uploads/
+reports/
+backup_working_version/
+*.pyc
