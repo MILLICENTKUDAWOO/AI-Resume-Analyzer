@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        AI Career Coach Pro | AI Resume Intelligence
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <h2>
+        🚀 AI Career Coach Pro
+    </h2>
+
+    <div>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<div class="hero-text">
+
+
+<h1>
+    Transform Your Resume Into Your Dream Career
+</h1>
+
+
+<p>
+    AI-powered resume analysis platform that helps you discover career opportunities,
+    improve your skills and prepare for interviews.
+</p>
+
+
+
+
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+
+<label class="upload-box">
+
+    📄 Upload Resume PDF
+
+    <input
+        type="file"
+        name="resume"
+        accept=".pdf"
+        required
+    >
+
+</label>
+
+
+
+
+
+<textarea
+    name="job_description"
+    placeholder="Paste a job description to check compatibility (optional)">
+</textarea>
+
+
+
+
+
+<button type="submit">
+
+    🚀 Analyze Resume
+
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="ai-card">
+
+
+<div class="circle">
+
+    🧠
+
+</div>
+
+
+<h2>
+    AI Career Intelligence
+</h2>
+
+
+<p>
+    Resume Analysis • ATS Score • Career Matching • Interview Coach
+</p>
+
+
+
+
+<div class="mini-card">
+
+    ✅ Skill Detection
+
+</div>
+
+
+
+<div class="mini-card">
+
+    ✅ Career Roadmap
+
+</div>
+
+
+
+
+<div class="mini-card">
+
+    ✅ AI Interview Preparation
+
+</div>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="features" class="features">
+
+
+<h2>
+    Powerful Features
+</h2>
+
+
+
+
+<div class="feature-grid">
+
+
+
+<div class="feature-card">
+
+<h3>
+    🧠 Resume Intelligence
+</h3>
+
+
+<p>
+    Extract skills, education and experience automatically.
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="feature-card">
+
+<h3>
+    🎯 Career Matching
+</h3>
+
+
+<p>
+    Find roles that match your current skills.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="feature-card">
+
+<h3>
+    📊 ATS Checker
+</h3>
+
+
+<p>
+    Know how recruiters and systems view your resume.
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="feature-card">
+
+<h3>
+    🎤 Interview Coach
+</h3>
+
+
+<p>
+    Practice questions generated from your resume.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section id="about" class="about">
+
+
+<h2>
+    Built For Future Professionals
+</h2>
+
+
+<p>
+    AI Career Coach helps students and graduates transform their resumes into career opportunities.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+    © 2026 Millicent Kudawoo
+</p>
+
+
+<p>
+    AI Career Coach | Transforming Resumes Into Career Opportunities
+</p>
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+
+
+</html>

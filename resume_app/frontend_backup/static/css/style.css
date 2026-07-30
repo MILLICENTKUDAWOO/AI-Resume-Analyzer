@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:#f1f5f9;
+    color:#0f172a;
+    line-height:1.6;
+    padding:30px;
+
+}
+
+
+
+/* NAVBAR */
+
+.navbar{
+
+    background:white;
+    padding:25px 40px;
+    border-radius:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom:40px;
+
+}
+
+
+.navbar h1{
+
+    color:#2563eb;
+    font-size:30px;
+
+}
+
+
+.navbar a{
+
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+
+
+/* DASHBOARD */
+
+
+.dashboard{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+
+
+
+/* TOP SCORE CARDS */
+
+
+.top-cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:30px;
+
+}
+
+
+
+.stat-card{
+
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.stat-card h3{
+
+    color:#64748b;
+    margin-bottom:10px;
+
+}
+
+
+.stat-card strong{
+
+    font-size:45px;
+    color:#2563eb;
+
+}
+
+
+
+
+/* RESULT CARDS */
+
+
+.result-card{
+
+    background:white;
+    padding:30px;
+    border-radius:22px;
+    margin-bottom:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.result-card h2{
+
+    color:#2563eb;
+    margin-bottom:20px;
+
+}
+
+
+
+.result-card h3{
+
+    margin-top:20px;
+
+}
+
+
+
+/* GRID */
+
+
+.result-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+
+}
+
+
+
+
+
+/* SKILLS */
+
+
+.skill{
+
+    display:inline-block;
+    padding:10px 15px;
+    border-radius:20px;
+    margin:6px;
+    font-weight:600;
+
+}
+
+
+
+.success{
+
+    background:#dcfce7;
+    color:#166534;
+
+}
+
+
+
+.danger{
+
+    background:#fee2e2;
+    color:#991b1b;
+
+}
+
+
+
+
+
+/* CAREER CARDS */
+
+
+.career-card{
+
+    background:#f8fafc;
+    padding:25px;
+    border-radius:18px;
+    margin:20px 0;
+
+}
+
+
+
+.match{
+
+    color:#16a34a;
+    font-size:22px;
+    font-weight:700;
+
+}
+
+
+
+
+
+/* INTERVIEW */
+
+
+.question{
+
+    background:#eff6ff;
+    padding:15px;
+    border-radius:12px;
+    margin:10px 0;
+
+}
+
+
+
+
+/* DOWNLOAD BUTTON */
+
+
+.download-btn{
+
+    display:block;
+    text-align:center;
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:700;
+    margin:30px auto;
+    max-width:300px;
+
+}
+
+
+
+.download-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    text-align:center;
+    padding:30px;
+    color:#64748b;
+
+}
+
+
+
+
+@media(max-width:700px){
+
+
+body{
+
+    padding:15px;
+
+}
+
+
+.navbar{
+
+    flex-direction:column;
+    gap:20px;
+
+}
+
+
+}

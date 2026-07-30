@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Career Coach Results</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+
+<header class="navbar">
+
+<div class="logo">
+    ✦ AI Career Coach
+</div>
+
+</header>
+
+
+
+<section class="dashboard">
+
+
+<h1>
+    Resume Intelligence Dashboard
+</h1>
+
+<p>
+    Your AI-powered career analysis report
+</p>
+
+
+
+
+<div class="result-grid">
+
+
+
+<div class="result-card score-card">
+
+<h2>
+    🩺 Resume Health Score
+</h2>
+
+<div class="score">
+
+{{ analysis.score }}%
+
+</div>
+
+
+<p>
+Overall resume strength
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🧠 Skills Detected
+</h2>
+
+
+<div class="skills">
+
+
+{% for skill in analysis.skills %}
+
+<span>
+{{ skill }}
+</span>
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+🎓 Education
+</h2>
+
+
+{% for item in analysis.education %}
+
+<p>
+✅ {{ item }}
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+
+<div class="result-card">
+
+
+<h2>
+💼 Experience
+</h2>
+
+
+{% for item in analysis.experience %}
+
+<p>
+✅ {{ item }}
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<section class="wide-card">
+
+
+<h2>
+💡 AI Recommendations
+</h2>
+
+
+<ul>
+
+
+{% for item in analysis.recommendations %}
+
+<li>
+{{ item }}
+</li>
+
+
+{% endfor %}
+
+
+</ul>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="wide-card">
+
+
+<h2>
+📈 Career Growth Roadmap
+</h2>
+
+
+<div class="roadmap">
+
+
+{% for item in analysis.roadmap %}
+
+<div class="road-item">
+
+{{ item }}
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="wide-card">
+
+<h2>
+🤖 ATS Compatibility Score
+</h2>
+
+
+<div class="match-score">
+
+{{ analysis.ats_score }}%
+
+</div>
+
+
+<p>
+Your resume compatibility with Applicant Tracking Systems.
+</p>
+
+
+<ul>
+
+<li>
+✅ Skills detected
+</li>
+
+<li>
+{% if analysis.education %}
+✅ Education information found
+{% else %}
+❌ Education information missing
+{% endif %}
+</li>
+
+
+<li>
+{% if analysis.experience %}
+✅ Experience information found
+{% else %}
+❌ Experience information missing
+{% endif %}
+</li>
+
+
+</ul>
+
+
+</section>
+
+
+{% if job_result %}
+
+
+<section class="wide-card">
+
+
+<h2>
+🎯 Job Compatibility
+</h2>
+
+
+
+<div class="match-score">
+
+{{ job_result.score }}%
+
+</div>
+
+
+
+
+<h3>
+Matched Skills
+</h3>
+
+
+<div class="skills">
+
+
+{% for skill in job_result.matched %}
+
+<span class="matched">
+
+✅ {{ skill }}
+
+</span>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+<h3>
+Skills To Improve
+</h3>
+
+
+<div class="skills">
+
+
+{% for skill in job_result.missing %}
+
+<span class="missing">
+
+❌ {{ skill }}
+
+</span>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+</section>
+
+
+{% endif %}
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 Millicent Kudawoo. All Rights Reserved.
+</p>
+
+
+<p>
+AI Career Coach | Transforming resumes into career opportunities
+</p>
+
+
+</footer>
+
+
+
+</section>
+
+
+
+</body>
+
+</html>
