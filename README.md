@@ -10,8 +10,6 @@ AI Career Coach Pro analyzes resumes, extracts skills, evaluates ATS compatibili
 
 
 
-\---
-
 
 
 \## ✨ Features
@@ -74,7 +72,7 @@ Download a professional AI-generated resume analysis report.
 
 
 
-\---
+
 
 
 
@@ -100,11 +98,43 @@ Download a professional AI-generated resume analysis report.
 
 
 
-\---
-
 
 
 \## 📂 Project Structure
+
+
+
+
+
+\## 📸 Screenshots
+
+
+
+\### Resume Upload Page
+
+
+
+!\[Resume Upload](screenshots/upload-page.png)
+
+
+
+\### AI Analysis Result
+
+
+
+!\[AI Resume Analysis](screenshots/result-summary.png)
+
+
+
+\### Career Recommendations
+
+
+
+!\[Career Recommendations](screenshots/career-recommendations.png)
+
+
+
+
 
 
 
