@@ -1,7 +1,11 @@
+# Ignore virtual environments and build artifacts
 .venv/
 .venv - Copy/
 __pycache__/
+
+# User uploads and generated reports
 uploads/
 reports/
-backup_working_version/
+
+# Python bytecode
 *.pyc

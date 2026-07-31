@@ -1,10 +1,12 @@
+# Dependencies for AI-Resume-Analyzer
+
 Flask==3.1.3
 gunicorn==23.0.0
-numpy
-pandas
-pdfplumber
-pypdf
-PyPDF2
-reportlab
+pypdf==3.13.0
+reportlab==3.6.12
 spacy==3.8.13
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
+# If you rely on other PDF tools, add them explicitly. Keep dependencies minimal.
+
+# Note: install the spaCy language model separately after installing packages:
+# python -m spacy download en_core_web_sm
