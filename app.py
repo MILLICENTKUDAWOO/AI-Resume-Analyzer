@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, send_file, abort
 import os
 from uuid import uuid4
 from werkzeug.utils import secure_filename
-import requests
 
 from pypdf import PdfReader
 
@@ -130,26 +129,6 @@ def download_report(filename):
         abort(404)
 
     return send_file(requested_path, as_attachment=True)
-
-
-@app.route('/joke')
-def joke_api():
-    """Fetch a random joke from an external API and return JSON."""
-    try:
-        resp = requests.get('https://official-joke-api.appspot.com/random_joke', timeout=5)
-        resp.raise_for_status()
-        data = resp.json()
-
-        # Normalize response
-        if 'setup' in data and 'punchline' in data:
-            return {'setup': data['setup'], 'punchline': data['punchline']}
-        if 'joke' in data:
-            return {'joke': data['joke']}
-
-        return {'error': 'Unexpected joke format'}, 502
-
-    except requests.RequestException as e:
-        return {'error': str(e)}, 502
 
 
 if __name__ == "__main__":

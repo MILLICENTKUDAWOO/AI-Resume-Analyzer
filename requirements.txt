@@ -5,7 +5,6 @@ gunicorn==23.0.0
 pypdf==3.13.0
 reportlab==3.6.12
 spacy==3.8.13
-requests==2.31.0
 
 # If you rely on other PDF tools, add them explicitly. Keep dependencies minimal.
 
