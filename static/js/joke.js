@@ -1,1 +1,1 @@
-// Joke generator removed — file retained for history
+// joke.js removed: no client-side joke functionality is used anymore

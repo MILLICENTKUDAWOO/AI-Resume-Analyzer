@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, send_file, abort
+from flask import Flask, render_template, request, send_file, abort, jsonify
 import os
 from uuid import uuid4
 from werkzeug.utils import secure_filename
+import logging
+import socket
+import time
 
 from pypdf import PdfReader
 
@@ -71,12 +74,14 @@ def upload_resume():
     try:
         resume.save(file_path)
     except Exception as e:
+        logging.exception("Failed to save uploaded file")
         return f"Failed to save uploaded file: {e}", 500
 
     # Extract text from PDF safely
     try:
         reader = PdfReader(file_path)
     except Exception as e:
+        logging.exception("Failed to read uploaded PDF")
         return f"Failed to read uploaded PDF: {e}", 400
 
     resume_text = ""
@@ -131,5 +136,29 @@ def download_report(filename):
     return send_file(requested_path, as_attachment=True)
 
 
+@app.route('/status')
+def status():
+    """Diagnostic status endpoint. Returns basic server info for debugging."""
+    info = {
+        "status": "ok",
+        "hostname": socket.gethostname(),
+        "time": int(time.time()),
+        "uploads_dir": os.path.abspath(UPLOAD_FOLDER),
+        "reports_dir": os.path.abspath(REPORT_FOLDER)
+    }
+    return jsonify(info)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Setup basic logging
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
+
+    host = "0.0.0.0"
+    port = 5000
+    logging.info(f"Starting dev server on http://{host}:{port} (FLASK_ENV=development)")
+    logging.info(f"Uploads directory: {os.path.abspath(UPLOAD_FOLDER)}")
+    logging.info(f"Reports directory: {os.path.abspath(REPORT_FOLDER)}")
+
+    # Bind to all interfaces so the dev server is reachable from other devices on the network.
+    # Warning: only use this on a trusted network (the Flask dev server is not for production).
+    app.run(host=host, port=port, debug=True)
